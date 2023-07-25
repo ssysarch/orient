@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 # Prepare
-cd /code/
+cd ../code/
 
 g++ *.cpp -o orient

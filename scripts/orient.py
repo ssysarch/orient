@@ -66,23 +66,21 @@ if (0):
 	plt.savefig('line_plot.pdf') 
 	plt.show()
 
-elif(0):
+elif(1):
 	n_groups = 2
+	i = 0
+	mm =[1]*8
+	with open('../code/res.txt') as f:
+		lines = f.readlines()
+		for l in lines:
+			mm[i] = float(lines[i].rstrip())
+			print(mm[i])
+			i = i+1 
+	for i in range (1,8):
+		mm[i] = mm[i]/mm[0]
+	mm[0] = 1
 
-	x1 = (1, 1)
-	x2 = (1, 1) # TEE
-	x22 = (1, 1) # TEE
-	x3 = (1, 1) # Slalom
-	x33 = (1, 1) # Origami
-	x4 = (1, 1) # Crater
-	x5 = (1, 1) # Orient
-	x6 = (1, 1) # Express
-	x61 = (1, 1) # Express
-	x62 = (1, 1) # Orient+TEE
-	x7 = (1, 1) # Orient + crater
-	x8 = (1, 1) # Express + crater
-	#print(x3[0]/x3[1])
-	#x6 = (0.84, 0.88) # Orient Exp 
+	baseline = 50
 	cm = plt.cm.get_cmap('tab20')
 
 	# create plot
@@ -91,14 +89,14 @@ elif(0):
 	bar_width = 0.1
 	opacity = 1
 
-	rects1 = plt.bar(index, x1, bar_width,
+	rects1 = plt.bar(index, mm[0], bar_width,
 	alpha=opacity,
 	color='C7',
 	edgecolor = "black",
 	linewidth=2.0,
 	label='Plain')
 
-	rects2 = plt.bar(index + bar_width, x2, bar_width,
+	rects2 = plt.bar(index + bar_width, mm[1], bar_width,
 	alpha=opacity,
 	color=cm.colors[3],
 	fill='false',
@@ -107,7 +105,7 @@ elif(0):
 	linewidth=2.0,
 	label='TEE',
 	zorder=3)
-	rects22 = plt.bar(index + 2*bar_width, x22, bar_width,
+	rects22 = plt.bar(index + 2*bar_width, mm[2], bar_width,
 	alpha=opacity,
 	color=cm.colors[9],
 	fill='false',
@@ -116,7 +114,7 @@ elif(0):
 	linewidth=2.0,
 	label='Occlumency',
 	zorder=3)
-	rects3 = plt.bar(index + 3*bar_width, x3, bar_width,
+	rects3 = plt.bar(index + 3*bar_width, mm[3], bar_width,
 	alpha=opacity,
 	color=cm.colors[2],
 	fill='false',
@@ -125,7 +123,7 @@ elif(0):
 	linewidth=2.0,
 	label='Slalom',
 	zorder=3)
-	rects33 = plt.bar(index + 4*bar_width, x33, bar_width,
+	rects33 = plt.bar(index + 4*bar_width, mm[4], bar_width,
 	alpha=opacity,
 	color=cm.colors[1],
 	fill='false',
@@ -134,7 +132,7 @@ elif(0):
 	linewidth=2.0,
 	label='Origami',
 	zorder=3)
-	rects4 = plt.bar(index + 5*bar_width, x4, bar_width,
+	rects4 = plt.bar(index + 5*bar_width, mm[5], bar_width,
 	alpha=opacity,
 	color=cm.colors[7],
 	fill='false',
@@ -170,7 +168,7 @@ elif(0):
 	# linewidth=2.0,
 	# label='OrientExp+TEE',
 	# zorder=3)
-	rects62 = plt.bar(index + 6*bar_width, x62, bar_width,
+	rects62 = plt.bar(index + 6*bar_width, mm[6], bar_width,
 	alpha=opacity,
 	color=cm.colors[5],
 	fill='false',
@@ -179,7 +177,7 @@ elif(0):
 	linewidth=2.0,
 	label='Orient+TEE',
 	zorder=3)
-	rects7 = plt.bar(index + 7*bar_width, x7, bar_width,
+	rects7 = plt.bar(index + 7*bar_width, mm[7], bar_width,
 	alpha=opacity,
 	color=cm.colors[16],
 	fill='false',
@@ -221,7 +219,7 @@ elif(0):
 	x7_patch = mpatches.Patch(facecolor=cm.colors[16], label='Orient+CraterLake', fill='false',hatch='+')
 	x8_patch = mpatches.Patch(facecolor=cm.colors[19], label='OriExp+Cra', fill='false',hatch='O.')
 
-	print(x1,x2,x3,x33,x4,x62,x7)
+	#print(x1,x2,x3,x33,x4,x62,x7)
 	
 	base = mpatches.Patch(facecolor='C7', label='Plain')
 	plt.legend(handles=[base, rects2,rects22, rects3,rects33, rects4,rects62,rects7], prop={'size': 18}, bbox_to_anchor=(0.15, 0.78, 0.9, .03), loc=3,
