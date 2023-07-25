@@ -56,8 +56,8 @@
 #define comm 2
 
 // Delays (in ms)
-#define dTRANSFER 1 // examples
-#define dTEEinit 1 // examples
+#define dTRANSFER 4.3
+#define dTEEinit 0.3
 
  extern double computation[4]; // in MFlop
  extern double networking[3]; //in ms 

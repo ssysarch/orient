@@ -146,6 +146,8 @@ int main(int argc, char* argv[])
 	etelatency[5]= oOrientTCompute (oOrientT, VGG16, VGG16_size); counter++;
 	etelatency[6]= oOrientCCompute (oOrientC, VGG16, VGG16_size); counter++;
 
+	int baseline = 50; 
+	cout << baseline <<endl;
 	for(int i=0; i<counter; i++){
 		cout<< etelatency[i]<< endl;
 	}

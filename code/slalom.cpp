@@ -45,8 +45,8 @@
 #include "method.h"
 #include <vector>
 
-double computation[] = {1,2,3,4}; // in MFlop // examples
-double networking[] = {0, .01, 1}; //in ms // examples
+double computation[] = {7.2/1000, 3800/1000, 330000/1000, 30250/1000}; // in MFlop
+double networking[] = {0, .0001, 1}; //in ms 
 
 vector <layer> oSlalom (ifstream* infile, NN NNnetw)
 {

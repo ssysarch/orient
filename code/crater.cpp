@@ -65,7 +65,7 @@ vector <layer> oCrater (ifstream* infile, NN NNnetw)
 		if(PPML[i].layer_type == LI)
 			PPML[i].compute_type = accl; 
 		else PPML[i].compute_type = accl; 
-		PPML[i].movement = local;
+		PPML[i].movement = local*1.5;
 		PPML[i].para_factor = 1;
 	}
 	PPML[0].movement = 2*SoC;
