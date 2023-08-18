@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/627544269.svg)](https://zenodo.org/badge/latestdoi/627544269)
+
 # Orient
 Repository for "Enc2:Privacy-Preserving Inference for Tiny IoTs via Encoding and Encryption" paper. 
 
